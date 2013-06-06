@@ -8,7 +8,7 @@ set nocompatible
 
 silent! call pathogen#infect()
 "from http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 call pathogen#helptags()
 
 " Sets how many lines of history VIM has to remember
@@ -142,3 +142,18 @@ map <leader>tm :tabmove
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => List of plugins installed 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"from http://vim.wikia.com/wiki/Easier_buffer_switching
+:nnoremap <F5> :buffers<CR>:buffer<Space>
+
+"nerdtree toggle
+map <F2> :NERDTreeToggle<CR>
+"mad silent> <F2> :NERDTreeToggle<CR>
+
+"vimgrep, from http://vim.wikia.com/wiki/Find_in_files_within_Vim
+map <F6> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+"navigating through results of vimgrep
+nmap <F7> :cp<CR>
+nmap <F8> :cn<CR>
+
+"insert timestamp
+:nnoremap <F3> "=strftime("%d-%b-%Y %H:%M, %a, ")<CR>P
