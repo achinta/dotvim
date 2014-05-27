@@ -6,9 +6,8 @@ source $VIMRUNTIME/mswin.vim
 set nocompatible
 
 
-silent! call pathogen#infect()
+call pathogen#infect('bundle/*')
 "from http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
-call pathogen#incubate()
 call pathogen#helptags()
 
 " Sets how many lines of history VIM has to remember
